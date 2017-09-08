@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    RED.nodes.registerType('yolo-detect',{
+        category: 'analysis',
+        color: '#EA625E',
+        defaults: {
+            name: {value:"", required: true},
+	    cfg: {value:"", required: true}, 
+	    weights: {value:"", required: true},
+	    data: {value:"", required: true}, 
+	    thresh: {value:"0.24", validate:RED.validators.number()},
+	    hierThresh: {value:"0.5", validate:RED.validators.number()}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "arrow-in.png",
+        paletteLabel: "YOLO detect",
+        label: function() {
+            return this.name||"YOLO detect";
+        },
+        inputLabels: "Image",
+        outputLabels: "Objects"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="yolo-detect">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-cfg"><i class="icon-file"></i> Config</label>
+        <input type="text" id="node-input-cfg" placeholder="Configuration">
+    </div>
+    <div class="form-row">
+        <label for="node-input-weights"><i class="icon-file"></i> Weights</label>
+        <input type="text" id="node-input-weights" placeholder="Weights">
+    </div>
+    <div class="form-row">
+        <label for="node-input-data"><i class="icon-file"></i> Data</label>
+        <input type="text" id="node-input-data" placeholder="Data">
+    </div>
+    <div class="form-row">
+        <label for="node-input-thresh"><i class=""></i> Threshold</label>
+        <input type="text" id="node-input-thresh" placeholder="Threshold">
+    </div>
+    <div class="form-row">
+        <label for="node-input-hierThresh"><i class=""></i> HThreshold</label>
+        <input type="text" id="node-input-hierThresh" placeholder="HThreshold">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="yolo-detect">
+    <p>A simple node that detects objects in an image using Darknet YOLO</p>
+</script>

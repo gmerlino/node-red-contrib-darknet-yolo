@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-darknet-yolo",
+  "name": "@smartme.io/node-red-contrib-darknet-yolo",
   "version": "0.0.4",
   "description": "A simple node that detects objects in an image using Darknet YOLO",
   "main": "yolo-detect.js",
